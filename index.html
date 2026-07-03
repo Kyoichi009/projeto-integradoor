@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Baixa Visão</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="accessibility-bar">
+        <button onclick="changeFontSize('increase')">A+</button>
+        <button onclick="changeFontSize('decrease')">A-</button>
+        <button onclick="toggleContrast()">Alto Contraste</button>
+    </div>
+
+    <header>
+        <div class="logo">VISÃO.</div>
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#tecnologias">Tecnologias</a>
+            <a href="#dicas">Como Ajudar</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Enxergando o <span class="highlight">Mundo</span> de Outra Forma</h1>
+            <p>Um portal dedicado à conscientização e ferramentas sobre a baixa visão.</p>
+        </section>
+
+        <section id="sobre" class="content-section">
+            <h2>O que é Baixa Visão?</h2>
+            <p>A baixa visão é uma condição em que a pessoa tem uma perda de visão que não pode ser totalmente corrigida com óculos comuns, lentes de contato, medicamentos ou cirurgia. É diferente da cegueira total, pois a pessoa ainda mantém uma parte da visão útil.</p>
+            
+            <div class="image-container">
+                <div class="image-placeholder">
+                    <span>[ Espaço para Imagem Estilo Y2K ]</span>
+                </div>
+                <button class="desc-btn" onclick="toggleDescription('desc-1')">Ver descrição da imagem</button>
+                <p id="desc-1" class="image-desc hidden">Descrição da imagem: Ilustração abstrata em formas orgânicas nas cores rosa claro e preto, simbolizando a percepção visual abstrata.</p>
+            </div>
+        </section>
+
+        <section id="tecnologias" class="content-section card-section">
+            <h2>Tecnologias Assistivas</h2>
+            <p>Recursos que ajudam no dia a dia:</p>
+            <ul class="styled-list">
+                <li>Leitores de tela para computadores e celulares.</li>
+                <li>Lupas eletrônicas e manuais.</li>
+                <li>Sistemas de ampliação de tela de softwares.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Trabalho Escolar — Desenvolvido com foco em acessibilidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
