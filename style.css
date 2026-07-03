@@ -1,0 +1,145 @@
+/* Paleta de Cores e Fontes Base */
+:root {
+    --bg-color: #F9F6F0;
+    --text-color: #1A1A1A;
+    --accent-color: #FFD2E5; /* Rosa da foto */
+    --card-bg: #FFFFFF;
+    --border-radius: 20px; /* Bordas arredondadas da estética */
+}
+
+/* Base do Site */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 18px; /* Tamanho padrão inicial confortável */
+    line-height: 1.6;
+}
+
+/* Barra de Acessibilidade */
+.accessibility-bar {
+    background-color: #1A1A1A;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.accessibility-bar button {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 8px 15px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #1A1A1A;
+}
+
+/* Header e Menu */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* Seções de Conteúdo */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    background-color: var(--accent-color);
+    padding: 0 10px;
+    border-radius: 8px;
+}
+
+.content-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Box da Imagem (Estilo da foto enviada) */
+.image-container {
+    margin-top: 20px;
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    color: white;
+    text-align: center;
+}
+
+.image-placeholder {
+    height: 200px;
+    background-color: #2A2A2A;
+    border: 2px dashed var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.desc-btn {
+    background-color: var(--accent-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px; /* Botão pílula da foto */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Estado escondido/visível da descrição */
+.hidden {
+    display: none;
+}
+
+.image-desc {
+    margin-top: 15px;
+    background-color: #2A2A2A;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* --- CLASSE DE ALTO CONTRASTE --- */
+body.high-contrast {
+    --bg-color: #000000;
+    --text-color: #FFFF00; /* Texto Amarelo no Preto para alta visibilidade */
+    --accent-color: #FFFF00;
+    --card-bg: #000000;
+}
+
+body.high-contrast .image-container {
+    border: 2px solid #FFFF00;
+}
+
+body.high-contrast .desc-btn {
+    color: black;
+}
