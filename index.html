@@ -165,16 +165,17 @@
             margin-top: 0;
         }
 
-        .video-box, .image-box {
+        .media-container {
             width: 100%;
             border-radius: var(--border-radius-sm);
             overflow: hidden;
             margin-bottom: 15px;
             border: 2px solid var(--accent-pink);
             background-color: #000;
+            text-align: center;
         }
 
-        .video-box video, .image-box img {
+        .media-container img, .media-container video {
             width: 100%;
             height: auto;
             display: block;
@@ -279,7 +280,6 @@
 
     <div class="main-layout">
         
-        <!-- COLUNA DA ESQUERDA -->
         <div class="left-column">
             <div class="info-card">
                 <h2>O que é a Baixa Visão?</h2>
@@ -307,69 +307,52 @@
             <div class="post-card">
                 <h3>Óptica em Câmeras de Segurança</h3>
                 <p>Como a refração, o controle de abertura da íris e os sensores CMOS/CCD captam a luz e a transformam em sinais digitais de alta nitidez.</p>
-                
-                <div class="image-box">
-                    <img src="camera-optica.jpg" alt="Explicação do Sistema Óptico em Câmeras de Segurança">
+                <div class="media-container">
+                    <img src="camera-optica.jpg" alt="Infográfico de Câmera de Segurança">
                 </div>
-                
                 <button class="desc-button" onclick="toggleDescription('desc-img-1')">Acessar Descrição</button>
-                <div id="desc-1" id="desc-img-1" class="description-text hidden">
-                    <strong>Descrição do Infográfico:</strong> Diagrama detalhado de uma câmera dome e seu sistema de lentes, mostrando a captação da luz, o ajuste da distância focal, os filtros de corte infravermelho (visão noturna) e o processamento de imagem via sensor CMOS.
+                <div id="desc-img-1" class="description-text hidden">
+                    <strong>Descrição:</strong> Diagrama detalhado de uma câmera dome e seu sistema de lentes, mostrando captação de luz, distância focal, infravermelho e sensor CMOS.
                 </div>
             </div>
 
             <div class="post-card">
                 <h3>Óptica nos Scanners de Caixa</h3>
                 <p>Princípios de difração, colimação e varredura a laser utilizados no reconhecimento rápido de códigos de barras.</p>
-                
-                <div class="image-box">
-                    <img src="scanner-optico.jpg" alt="Óptica nos Scanners de Caixa">
+                <div class="media-container">
+                    <img src="scanner-optico.jpg" alt="Infográfico do Scanner de Caixa">
                 </div>
-                
                 <button class="desc-button" onclick="toggleDescription('desc-img-2')">Acessar Descrição</button>
                 <div id="desc-img-2" class="description-text hidden">
-                    <strong>Descrição do Infográfico:</strong> Ilustração mostrando o interior de um leitor de código de barras manual. Destaca o diodo emissor de laser, os espelhos rotativos de varredura, o conjunto de lentes colimadoras e o fotodetector que decodifica as barras em dados.
+                    <strong>Descrição:</strong> Leitor de código de barras mostrando o diodo emissor de laser, espelhos rotativos, lentes colimadoras e o fotodetector.
                 </div>
             </div>
         </div>
 
-        <!-- COLUNA DA DIREITA -->
         <div class="right-column">
             <div class="blog-badge">DIÁRIO MAKER</div>
 
             <div class="post-card">
                 <h3>Projeto 01: Simulador de Semáforo Acessível</h3>
                 <p>Montagem de um protótipo com Arduino simulando um semáforo veicular, focado em experimentos de acessibilidade e cultura maker.</p>
-                
-                <div class="video-box">
-                    <video autoplay loop muted playsinline>
-                        <source src="semaforo.mp4" type="video/mp4">
-                        Seu navegador não suporta a exibição deste vídeo.
-                    </video>
+                <div class="media-container">
+                    <video autoplay loop muted playsinline src="semaforo.mp4"></video>
                 </div>
-                
-                <button class="desc-button" onclick="toggleDescription('desc-1')">Acessar Descrição do Vídeo</button>
-                <div id="desc-1" class="description-text hidden">
-                    <strong>Descrição do Vídeo:</strong> Protótipo em protoboard conectado ao Arduino com leds piscando em sequência simulando um semáforo (Verde, Amarelo e Vermelho).<br><br>
-                    <strong>Solução de Acessibilidade:</strong> Para ajudar quem tem dificuldade em distinguir cores (como daltonismo ou baixa visão), o semáforo pode incorporar sinais sonoros com ritmos diferentes para cada fase, padrões geométricos iluminados (como símbolos) ou luzes com intensidades e posições verticais estritamente padronizadas e destacadas.
+                <button class="desc-button" onclick="toggleDescription('desc-vid-1')">Acessar Descrição do Vídeo</button>
+                <div id="desc-vid-1" class="description-text hidden">
+                    <strong>Descrição do Vídeo:</strong> Protótipo em protoboard conectado ao Arduino com LEDs simulando semáforo.
                 </div>
             </div>
 
             <div class="post-card">
                 <h3>Projeto 02: Simulador de LED RGB e Intensidade</h3>
                 <p>Aplicação baseada na variação de cor e brilho para sinalização de ambientes de circulação.</p>
-                
-                <div class="video-box">
-                    <video autoplay loop muted playsinline>
-                        <source src="led-rgb.mp4" type="video/mp4">
-                        Seu navegador não suporta a exibição deste vídeo.
-                    </video>
+                <div class="media-container">
+                    <video autoplay loop muted playsinline src="led-rgb.mp4"></video>
                 </div>
-                
-                <button class="desc-button" onclick="toggleDescription('desc-2')">Acessar Descrição do Vídeo</button>
-                <div id="desc-2" class="description-text hidden">
-                    <strong>Descrição do Vídeo:</strong> Mão ajustando um potenciômetro na protoboard, alterando suavemente as cores e a intensidade de iluminação do LED RGB conectado ao Arduino.<br><br>
-                    <strong>Conceito do Projeto:</strong> Demonstrar como a variação luminosa e o alto contraste auxiliam pessoas com baixa visão a identificar caminhos, entradas e áreas críticas onde sinalizações escritas não são eficazes.
+                <button class="desc-button" onclick="toggleDescription('desc-vid-2')">Acessar Descrição do Vídeo</button>
+                <div id="desc-vid-2" class="description-text hidden">
+                    <strong>Descrição do Vídeo:</strong> Ajuste de potenciômetro na protoboard alterando cores e intensidade do LED RGB.
                 </div>
             </div>
 
@@ -378,28 +361,24 @@
             <div class="post-card">
                 <h3>A Óptica nos Microscópios</h3>
                 <p>Sistemas de lentes objetivas e oculares projetadas para ampliações extremas de imagem.</p>
-                
-                <div class="image-box">
-                    <img src="microscopio-optico.jpg" alt="A Óptica nos Microscópios">
+                <div class="media-container">
+                    <img src="microscopio-optico.jpg" alt="Infográfico do Microscópio">
                 </div>
-                
                 <button class="desc-button" onclick="toggleDescription('desc-img-3')">Acessar Descrição</button>
                 <div id="desc-img-3" class="description-text hidden">
-                    <strong>Descrição do Infográfico:</strong> Diagrama detalhado do funcionamento de um microscópio óptico. Exibe o caminho do feixe de luz desde a lâmpada LED até o condensador, revólver de objetivas, tubo e lente ocular.
+                    <strong>Descrição:</strong> Funcionamento do microscópio óptico do LED ao condensador, objetivas e lente ocular.
                 </div>
             </div>
 
             <div class="post-card">
                 <h3>Óptica nos Lasers de Corte</h3>
                 <p>Concentração e colimação de feixes de alta potência para precisão em corte e gravação mecânica.</p>
-                
-                <div class="image-box">
-                    <img src="laser-optico.jpg" alt="Óptica nos Lasers de Corte">
+                <div class="media-container">
+                    <img src="laser-optico.jpg" alt="Infográfico do Laser de Corte">
                 </div>
-                
                 <button class="desc-button" onclick="toggleDescription('desc-img-4')">Acessar Descrição</button>
                 <div id="desc-img-4" class="description-text hidden">
-                    <strong>Descrição do Infográfico:</strong> Estrutura de uma cortadora laser CNC mostrando a cavidade ressonante, lentes de colimação, lentes focalizadoras e o bico de corte com exaustão.
+                    <strong>Descrição:</strong> Estrutura de cortadora laser CNC com cavidade ressonante, colimação e bico de corte.
                 </div>
             </div>
         </div>
