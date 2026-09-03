@@ -107,14 +107,11 @@
 
         .main-layout {
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px 50px 20px;
-        }
-
-        .left-column, .right-column {
-            flex: 1;
         }
 
         .info-card {
@@ -122,7 +119,6 @@
             border: 2px solid var(--dark-gray);
             border-radius: var(--border-radius-lg);
             padding: 25px;
-            margin-bottom: 25px;
             color: var(--card-text);
         }
 
@@ -147,28 +143,38 @@
             margin-bottom: 12px;
         }
 
-        .blog-badge {
-            background-color: var(--dark-gray);
-            color: #FFFFFF;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 15px;
+        .videos-grid {
+            display: flex;
+            gap: 25px;
         }
 
         .post-card {
+            flex: 1;
             background-color: var(--dark-gray);
             color: #FFFFFF;
             border-radius: var(--border-radius-lg);
             padding: 25px;
-            margin-bottom: 25px;
             border: 2px solid var(--dark-gray);
         }
 
         .post-card h3 {
             color: var(--accent-pink);
             margin-top: 0;
+        }
+
+        .video-box {
+            width: 100%;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent-pink);
+            background-color: #000;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         .desc-button {
@@ -251,7 +257,7 @@
         }
 
         @media (max-width: 850px) {
-            .main-layout {
+            .videos-grid {
                 flex-direction: column;
             }
         }
@@ -259,6 +265,7 @@
 </head>
 <body>
 
+    <!-- BOTÕES DE ACESSIBILIDADE -->
     <div class="accessibility-bar">
         <span>Acessibilidade:</span>
         <div>
@@ -268,10 +275,12 @@
         </div>
     </div>
 
+    <!-- CABEÇALHO -->
     <header>
         <div class="logo"><span>Baixa</span>.Visão</div>
     </header>
 
+    <!-- TÍTULO E SUBTÍTULO -->
     <div class="hero">
         <h1>SISTEMAS ÓPTICOS & ACESSIBILIDADE</h1>
         <p>Aplicações Tecnológicas, Cultura Maker e Inclusão Visuomotora</p>
@@ -279,64 +288,77 @@
 
     <div class="main-layout">
         
-        <!-- COLUNA DA ESQUERDA -->
-        <div class="left-column">
-            <div class="info-card">
-                <h2>O que é a Baixa Visão?</h2>
-                <p>A baixa visão é uma condição crônica em que a pessoa apresenta uma perda severa da capacidade de enxergar. Ela não pode ser corrigida com óculos comuns, cirurgias ou medicamentos.</p>
+        <!-- QUADRADO 1 -->
+        <div class="info-card">
+            <h2>O que é Baixa Visão?</h2>
+            <p>A baixa visão (ou visão subnormal) é uma condição crônica caracterizada pela perda severa da capacidade visual que não pode ser totalmente corrigida por meio de óculos convencionais, lentes de contato, cirurgias ou tratamentos médicos. Diferente da cegueira total, a pessoa com baixa visão possui um resíduo visual útil que pode ser maximizado com tecnologias assistivas, ampliação e iluminação adequada.</p>
+        </div>
+
+        <!-- QUADRADO 2 -->
+        <div class="info-card">
+            <h2>Exemplos de Condições e Doenças</h2>
+            <p>Conheça as principais patologias e condições visuais que causam a baixa visão:</p>
+            <ul>
+                <li><strong>Degeneração Macular Relacionada à Idade (DMRI):</strong> Afeta a parte central da retina, prejudicando a visão de detalhes finos e leitura.</li>
+                <li><strong>Glaucoma:</strong> Danifica o nervo óptico, causando perda progressiva da visão periférica (visão em túnel).</li>
+                <li><strong>Retinopatia Diabética:</strong> Lesões nos vasos sanguíneos da retina provocadas por complicações do diabetes.</li>
+                <li><strong>Catarata Congênita ou Avançada:</strong> Opacificação do cristalino que impede a passagem limpa da luz.</li>
+                <li><strong>Albinismo Ocular:</strong> Falta de pigmentação na retina e íris, gerando extrema sensibilidade à luz (fotofobia) e baixa acuidade visual.</li>
+                <li><strong>Daltonismo Severo / Acromatopsia:</strong> Dificuldade ou incapacidade total de distinguir cores, dependendo fortemente do contraste de brilho para orientação.</li>
+            </ul>
+        </div>
+
+        <!-- QUADRADO 3 -->
+        <div class="info-card">
+            <h2>Importância da Sinalização Luminosa</h2>
+            <ul>
+                <li><strong>Direcionamento:</strong> Cores e luzes ajudam a identificar caminhos e rotas em ambientes internos e externos.</li>
+                <li><strong>Limites e Obstáculos:</strong> O alto contraste torna visíveis portas, degraus e barreiras arquitetônicas.</li>
+                <li><strong>Intensidade de Luz:</strong> Variações de brilho destacam saídas de emergência e áreas de circulação principal.</li>
+                <li><strong>Substituição de Placas:</strong> Pessoas com baixa visão percebem feixes luminosos e contrastes muito melhor do que textos impressos pequenos.</li>
+            </ul>
+        </div>
+
+        <!-- QUADRADO 4 -->
+        <div class="info-card">
+            <h2>Aplicações Práticas de Sistemas Ópticos</h2>
+            <p>Descrição dos componentes ópticos utilizados em tecnologias do cotidiano e sua relação com a manipulação da luz:</p>
+
+            <div class="description-box">
+                <h3>1. Câmeras de Segurança Dome</h3>
+                <p>Diagrama estrutural que exibe o percurso da luz através do conjunto de lentes de refração, o controle mecânico da íris (abertura focal), os filtros de corte infravermelho para captura noturna e a conversão final dos fótons em sinais elétricos digitais através do sensor CMOS.</p>
             </div>
 
-            <div class="info-card">
-                <h2>Baixa Visão vs. Cegueira Total</h2>
-                <p><strong>Baixa Visão:</strong> A pessoa tem um resíduo visual útil. Vê contornos, cores e luzes com o uso de ampliações e alto contraste.</p>
-                <p><strong>Cegueira Total:</strong> Perda completa da visão, sem percepção de luz. Depende de leitores de tela com áudio.</p>
+            <div class="description-box">
+                <h3>2. Scanners de Caixa (Leitores de Código de Barras)</h3>
+                <p>Ilustração técnica do mecanismo interno de um scanner manual. O sistema utiliza um diodo emissor de laser colimado, espelhos prismáticos rotativos para varredura omnidirecional e fotodetectores de alta precisão para traduzir o contraste das barras em dados binários.</p>
             </div>
 
-            <div class="info-card">
-                <h2>Importância da Sinalização Luminosa</h2>
-                <ul>
-                    <li><strong>Direcionamento:</strong> Cores e luzes ajudam a identificar caminhos no ambiente.</li>
-                    <li><strong>Limites e Obstáculos:</strong> O alto contraste torna visíveis portas e barreiras.</li>
-                    <li><strong>Intensidade de Luz:</strong> Variações destacam rotas principais de circulação.</li>
-                    <li><strong>Substituição de Placas:</strong> Pessoas com baixa visão percebem feixes luminosos muito melhor do que textos pequenos.</li>
-                </ul>
+            <div class="description-box">
+                <h3>3. Microscópios Ópticos de Ampliação</h3>
+                <p>Esquema do caminho óptico da luz emitida por uma fonte LED inferior, passando pelo condensador, atravessando a lâmina de amostra e sofrendo dupla ampliação geométrica: primeiro no conjunto de lentes objetivas e, em seguida, na lente ocular superior.</p>
             </div>
 
-            <!-- NOVO BLOCO COM AS DESCRIÇÕES DOS INFOGRÁFICOS DA ÓPTICA -->
-            <div class="info-card">
-                <h2>Aplicações Práticas de Sistemas Ópticos</h2>
-                <p>Descrição detalhada dos componentes ópticos utilizados em tecnologias do dia a dia e sua relação com a amplificação e captação da luz:</p>
-
-                <div class="description-box">
-                    <h3>1. Câmeras de Segurança Dome</h3>
-                    <p>Diagrama estrutural que exibe o percurso da luz através do conjunto de lentes de refração, o controle mecânico da íris (abertura focal), os filtros de corte infravermelho para captura noturna e a conversão final dos fótons em sinais elétricos digitais através do sensor CMOS.</p>
-                </div>
-
-                <div class="description-box">
-                    <h3>2. Scanners de Caixa (Leitores de Código de Barras)</h3>
-                    <p>Ilustração técnica do mecanismo interno de um scanner manual. O sistema utiliza um diodo emissor de laser colimado, espelhos prismáticos rotativos para varredura omnidirecional e fotodetectores de alta precisão para traduzir o contraste das barras em dados binários.</p>
-                </div>
-
-                <div class="description-box">
-                    <h3>3. Microscópios Ópticos de Ampliação</h3>
-                    <p>Esquema do caminho óptico da luz emitida por uma fonte LED inferior, passando pelo condensador, atravessando a lâmina de amostra e sofrendo dupla ampliação geométrica: primeiro no conjunto de lentes objetivas e, em seguida, na lente ocular superior.</p>
-                </div>
-
-                <div class="description-box">
-                    <h3>4. Lasers de Corte e Gravação CNC</h3>
-                    <p>Representação da cavidade ressonante de alta potência, onde feixes de luz coerente são concentrados por lentes de colimação de quartzo e focalizados em um ponto de fração de milímetro no bico de corte, gerando densidade de energia suficiente para usinagem mecânica.</p>
-                </div>
+            <div class="description-box">
+                <h3>4. Lasers de Corte e Gravação CNC</h3>
+                <p>Representação da cavidade ressonante de alta potência, onde feixes de luz coerente são concentrados por lentes de colimação de quartzo e focalizados em um ponto de fração de milímetro no bico de corte, gerando densidade de energia suficiente para usinagem mecânica.</p>
             </div>
         </div>
 
-        <!-- COLUNA DA DIREITA -->
-        <div class="right-column">
-            <div class="blog-badge">DIÁRIO MAKER</div>
-
+        <!-- VÍDEOS COM EXPLICAÇÕES -->
+        <div class="videos-grid">
+            
             <div class="post-card">
                 <h3>Projeto 01: Simulador de Semáforo Acessível</h3>
                 <p>Montagem de um protótipo com Arduino simulando um semáforo veicular, focado em experimentos de acessibilidade e cultura maker.</p>
                 
+                <div class="video-box">
+                    <video autoplay loop muted playsinline>
+                        <source src="semaforo.mp4" type="video/mp4">
+                        [Vídeo indisponível]
+                    </video>
+                </div>
+
                 <button class="desc-button" onclick="toggleDescription('desc-vid-1')">Acessar Detalhes do Projeto</button>
                 <div id="desc-vid-1" class="description-text hidden">
                     <strong>Estrutura do Projeto:</strong> Protótipo em protoboard conectado ao Arduino com LEDs alternando nas frequências de parada, atenção e passagem.<br><br>
@@ -348,12 +370,20 @@
                 <h3>Projeto 02: Simulador de LED RGB e Intensidade</h3>
                 <p>Aplicação baseada na variação de cor e brilho para sinalização de ambientes de circulação.</p>
                 
+                <div class="video-box">
+                    <video autoplay loop muted playsinline>
+                        <source src="led-rgb.mp4" type="video/mp4">
+                        [Vídeo indisponível]
+                    </video>
+                </div>
+
                 <button class="desc-button" onclick="toggleDescription('desc-vid-2')">Acessar Detalhes do Projeto</button>
                 <div id="desc-vid-2" class="description-text hidden">
                     <strong>Estrutura do Projeto:</strong> Circuito com potenciômetro analógico e microcontrolador Arduino permitindo o controle de brilho (PWM) e matiz de um LED RGB.<br><br>
                     <strong>Conceito de Acessibilidade:</strong> O contraste dinâmico de intensidade luminosa orienta o deslocamento em corredores e saídas de emergência quando elementos gráficos tradicionais não fornecem legibilidade suficiente.
                 </div>
             </div>
+
         </div>
 
     </div>
