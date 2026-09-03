@@ -3,60 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Baixa Visão</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portal Baixa Visão & Cultura Maker</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #FDF9F3; 
+            --text-color: #111111;
+            --accent-pink: #FFD3E8; 
+            --dark-gray: #222222;
+            --card-bg: #FFFFFF;
+            --border-radius-lg: 24px;
+            --border-radius-sm: 14px;
+            --card-text: #111111;
+        }
+
+        html {
+            font-size: 18px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .accessibility-bar {
+            background-color: var(--dark-gray);
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--dark-gray);
+        }
+
+        .accessibility-bar span {
+            color: #FFFFFF;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .acc-btn {
+            background-color: var(--accent-pink);
+            color: #000000;
+            border: 2px solid #000000;
+            padding: 8px 16px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 8px;
+            font-size: 1rem;
+            box-shadow: 2px 2px 0px #000000;
+        }
+
+        header {
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--dark-gray);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -1.5px;
+            text-transform: uppercase;
+            color: var(--text-color);
+        }
+
+        .logo span {
+            background-color: var(--accent-pink);
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #000000;
+            border: 2px solid var(--dark-gray);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--card-bg);
+            border: 2px solid var(--dark-gray);
+            border-radius: var(--border-radius-lg);
+            margin: 30px auto;
+            max-width: 1200px;
+            box-shadow: 4px 4px 0px var(--dark-gray);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
+
+        .main-layout {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 50px 20px;
+        }
+
+        .left-column, .right-column {
+            flex: 1;
+        }
+
+        .info-card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--dark-gray);
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            margin-bottom: 25px;
+            color: var(--card-text);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-left: 6px solid var(--accent-pink);
+            padding-left: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+        }
+
+        .blog-badge {
+            background-color: var(--dark-gray);
+            color: #FFFFFF;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .post-card {
+            background-color: var(--dark-gray);
+            color: #FFFFFF;
+            border-radius: var(--border-radius-lg);
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid var(--dark-gray);
+        }
+
+        .post-card h3 {
+            color: var(--accent-pink);
+            margin-top: 0;
+        }
+
+        .video-box {
+            width: 100%;
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent-pink);
+            background-color: #000;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .desc-button {
+            background-color: var(--accent-pink);
+            color: #000000;
+            border: 2px solid #000000;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px #000000;
+        }
+
+        .description-text {
+            margin-top: 15px;
+            background-color: #1A1A1A;
+            padding: 15px;
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid var(--accent-pink);
+            color: #FFFFFF;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 2px solid var(--dark-gray);
+        }
+
+        /* --- MODO ALTO CONTRASTE --- */
+        html.high-contrast {
+            --bg-color: #000000 !important;
+            --text-color: #FFFF00 !important;
+            --accent-pink: #FFFF00 !important;
+            --dark-gray: #FFFF00 !important;
+            --card-bg: #000000 !important;
+            --card-text: #FFFF00 !important;
+        }
+
+        html.high-contrast body,
+        html.high-contrast header,
+        html.high-contrast .hero,
+        html.high-contrast .info-card,
+        html.high-contrast .post-card,
+        html.high-contrast p,
+        html.high-contrast li,
+        html.high-contrast h1,
+        html.high-contrast h2,
+        html.high-contrast h3,
+        html.high-contrast div,
+        html.high-contrast span {
+            background-color: #000000 !important;
+            color: #FFFF00 !important;
+            border-color: #FFFF00 !important;
+            box-shadow: none !important;
+        }
+
+        html.high-contrast .acc-btn, 
+        html.high-contrast .desc-button {
+            background-color: #FFFF00 !important;
+            color: #000000 !important;
+            border: 2px solid #FFFF00 !important;
+        }
+
+        html.high-contrast .description-text {
+            color: #FFFF00 !important;
+            background-color: #000000 !important;
+        }
+
+        @media (max-width: 850px) {
+            .main-layout {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <div class="accessibility-bar">
-        <button onclick="changeFontSize('increase')">A+</button>
-        <button onclick="changeFontSize('decrease')">A-</button>
-        <button onclick="toggleContrast()">Alto Contraste</button>
+        <span>Acessibilidade:</span>
+        <div>
+            <button class="acc-btn" onclick="changeFontSize('increase')">A+</button>
+            <button class="acc-btn" onclick="changeFontSize('decrease')">A-</button>
+            <button class="acc-btn" onclick="toggleContrast()">Alto Contraste</button>
+        </div>
     </div>
 
     <header>
-        <div class="logo">VISÃO.</div>
-        <nav>
-            <a href="#sobre">Sobre</a>
-            <a href="#tecnologias">Tecnologias</a>
-            <a href="#dicas">Como Ajudar</a>
-        </nav>
+        <div class="logo"><span>Baixa</span>.Visão</div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Enxergando o <span class="highlight">Mundo</span> de Outra Forma</h1>
-            <p>Um portal dedicado à conscientização e ferramentas sobre a baixa visão.</p>
-        </section>
+    <div class="hero">
+        <h1>PROTÓTIPOS E ACESSIBILIDADE</h1>
+        <p>Projetos com Arduino e Cultura Maker para Inclusão Visuomotora</p>
+    </div>
 
-        <section id="sobre" class="content-section">
-            <h2>O que é Baixa Visão?</h2>
-            <p>A baixa visão é uma condição em que a pessoa tem uma perda de visão que não pode ser totalmente corrigida com óculos comuns, lentes de contato, medicamentos ou cirurgia. É diferente da cegueira total, pois a pessoa ainda mantém uma parte da visão útil.</p>
-            
-            <div class="image-container">
-                <div class="image-placeholder">
-                    <span>[ Espaço para Imagem Estilo Y2K ]</span>
-                </div>
-                <button class="desc-btn" onclick="toggleDescription('desc-1')">Ver descrição da imagem</button>
-                <p id="desc-1" class="image-desc hidden">Descrição da imagem: Ilustração abstrata em formas orgânicas nas cores rosa claro e preto, simbolizando a percepção visual abstrata.</p>
+    <div class="main-layout">
+        
+        <div class="left-column">
+            <div class="info-card">
+                <h2>O que é a Baixa Visão?</h2>
+                <p>A baixa visão é uma condição crônica em que a pessoa apresenta uma perda severa da capacidade de enxergar. Ela não pode ser corrigida com óculos comuns, cirurgias ou medicamentos.</p>
             </div>
-        </section>
 
-        <section id="tecnologias" class="content-section card-section">
-            <h2>Tecnologias Assistivas</h2>
-            <p>Recursos que ajudam no dia a dia:</p>
-            <ul class="styled-list">
-                <li>Leitores de tela para computadores e celulares.</li>
-                <li>Lupas eletrônicas e manuais.</li>
-                <li>Sistemas de ampliação de tela de softwares.</li>
-            </ul>
-        </section>
-    </main>
+            <div class="info-card">
+                <h2>Baixa Visão vs. Cegueira Total</h2>
+                <p><strong>Baixa Visão:</strong> A pessoa tem um resíduo visual útil. Vê contornos, cores e luzes com o uso de ampliações e alto contraste.</p>
+                <p><strong>Cegueira Total:</strong> Perda completa da visão, sem percepção de luz. Depende de leitores de tela com áudio.</p>
+            </div>
+
+            <div class="info-card">
+                <h2>Importância da Sinalização Luminosa</h2>
+                <ul>
+                    <li><strong>Direcionamento:</strong> Cores e luzes ajudam a identificar caminhos no ambiente.</li>
+                    <li><strong>Limites e Obstáculos:</strong> O alto contraste torna visíveis portas e barreiras.</li>
+                    <li><strong>Intensidade de Luz:</strong> Variações destacam rotas principais de circulação.</li>
+                    <li><strong>Substituição de Placas:</strong> Pessoas com baixa visão percebem feixes luminosos muito melhor do que textos pequenos.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="blog-badge">DIÁRIO MAKER</div>
+
+            <div class="post-card">
+                <h3>Projeto 01: Simulador de Semáforo Acessível</h3>
+                <p>Montagem de um protótipo com Arduino simulando um semáforo veicular, focado em experimentos de acessibilidade e cultura maker.</p>
+                
+                <div class="video-box">
+                    <video autoplay loop muted playsinline>
+                        <source src="semaforo.mp4" type="video/mp4">
+                        Seu navegador não suporta a exibição deste vídeo.
+                    </video>
+                </div>
+                
+                <button class="desc-button" onclick="toggleDescription('desc-1')">Acessar Descrição do Vídeo</button>
+                <div id="desc-1" class="description-text hidden">
+                    <strong>Descrição do Vídeo:</strong> Protótipo em protoboard conectado ao Arduino com leds piscando em sequência simulando um semáforo (Verde, Amarelo e Vermelho).<br><br>
+                    <strong>Solução de Acessibilidade:</strong> Para ajudar quem tem dificuldade em distinguir cores (como daltonismo ou baixa visão), o semáforo pode incorporar sinais sonoros com ritmos diferentes para cada fase, padrões geométricos iluminados (como símbolos) ou luzes com intensidades e posições verticais estritamente padronizadas e destacadas.
+                </div>
+            </div>
+
+            <div class="post-card">
+                <h3>Projeto 02: Simulador de LED RGB e Intensidade</h3>
+                <p>Aplicação baseada na variação de cor e brilho para sinalização de ambientes de circulação.</p>
+                
+                <div class="video-box">
+                    <video autoplay loop muted playsinline>
+                        <source src="led-rgb.mp4" type="video/mp4">
+                        Seu navegador não suporta a exibição deste vídeo.
+                    </video>
+                </div>
+                
+                <button class="desc-button" onclick="toggleDescription('desc-2')">Acessar Descrição do Vídeo</button>
+                <div id="desc-2" class="description-text hidden">
+                    <strong>Descrição do Vídeo:</strong> Mão ajustando um potenciômetro na protoboard, alterando suavemente as cores e a intensidade de iluminação do LED RGB conectado ao Arduino.<br><br>
+                    <strong>Conceito do Projeto:</strong> Demonstrar como a variação luminosa e o alto contraste auxiliam pessoas com baixa visão a identificar caminhos, entradas e áreas críticas onde sinalizações escritas não são eficazes.
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <footer>
-        <p>Trabalho Escolar — Desenvolvido com foco em acessibilidade.</p>
+        <p>&copy; 2026 - Projeto Escolar sobre Baixa Visão e Cultura Maker.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function changeFontSize(action) {
+            const htmlElement = document.documentElement;
+            let currentSize = parseFloat(window.getComputedStyle(htmlElement).fontSize);
+
+            if (action === 'increase') {
+                if (currentSize < 32) { 
+                    htmlElement.style.fontSize = (currentSize + 2) + 'px';
+                }
+            } else if (action === 'decrease') {
+                if (currentSize > 14) { 
+                    htmlElement.style.fontSize = (currentSize - 2) + 'px';
+                }
+            }
+        }
+
+        function toggleContrast() {
+            document.documentElement.classList.toggle('high-contrast');
+        }
+
+        function toggleDescription(descId) {
+            const descElement = document.getElementById(descId);
+            if (descElement.classList.contains('hidden')) {
+                descElement.classList.remove('hidden');
+            } else {
+                descElement.classList.add('hidden');
+            }
+        }
+    </script>
 </body>
 </html>
