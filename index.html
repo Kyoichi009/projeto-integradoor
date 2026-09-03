@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Baixa Visão & Cultura Maker</title>
+    <title>Portal Baixa Visão, Maker & Óptica</title>
     <style>
         *, *::before, *::after {
             box-sizing: border-box;
@@ -100,7 +100,7 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin: 0 0 10px 0;
             letter-spacing: -1px;
         }
@@ -165,7 +165,7 @@
             margin-top: 0;
         }
 
-        .video-box {
+        .video-box, .image-box {
             width: 100%;
             border-radius: var(--border-radius-sm);
             overflow: hidden;
@@ -174,7 +174,7 @@
             background-color: #000;
         }
 
-        .video-box video {
+        .video-box video, .image-box img {
             width: 100%;
             height: auto;
             display: block;
@@ -273,12 +273,13 @@
     </header>
 
     <div class="hero">
-        <h1>PROTÓTIPOS E ACESSIBILIDADE</h1>
-        <p>Projetos com Arduino e Cultura Maker para Inclusão Visuomotora</p>
+        <h1>SISTEMAS ÓPTICOS & ACESSIBILIDADE</h1>
+        <p>Aplicações Tecnológicas, Cultura Maker e Inclusão Visuomotora</p>
     </div>
 
     <div class="main-layout">
         
+        <!-- COLUNA DA ESQUERDA -->
         <div class="left-column">
             <div class="info-card">
                 <h2>O que é a Baixa Visão?</h2>
@@ -300,8 +301,39 @@
                     <li><strong>Substituição de Placas:</strong> Pessoas com baixa visão percebem feixes luminosos muito melhor do que textos pequenos.</li>
                 </ul>
             </div>
+
+            <div class="blog-badge">ESTUDO DA ÓPTICA</div>
+
+            <div class="post-card">
+                <h3>Óptica em Câmeras de Segurança</h3>
+                <p>Como a refração, o controle de abertura da íris e os sensores CMOS/CCD captam a luz e a transformam em sinais digitais de alta nitidez.</p>
+                
+                <div class="image-box">
+                    <img src="camera-optica.jpg" alt="Explicação do Sistema Óptico em Câmeras de Segurança">
+                </div>
+                
+                <button class="desc-button" onclick="toggleDescription('desc-img-1')">Acessar Descrição</button>
+                <div id="desc-1" id="desc-img-1" class="description-text hidden">
+                    <strong>Descrição do Infográfico:</strong> Diagrama detalhado de uma câmera dome e seu sistema de lentes, mostrando a captação da luz, o ajuste da distância focal, os filtros de corte infravermelho (visão noturna) e o processamento de imagem via sensor CMOS.
+                </div>
+            </div>
+
+            <div class="post-card">
+                <h3>Óptica nos Scanners de Caixa</h3>
+                <p>Princípios de difração, colimação e varredura a laser utilizados no reconhecimento rápido de códigos de barras.</p>
+                
+                <div class="image-box">
+                    <img src="scanner-optico.jpg" alt="Óptica nos Scanners de Caixa">
+                </div>
+                
+                <button class="desc-button" onclick="toggleDescription('desc-img-2')">Acessar Descrição</button>
+                <div id="desc-img-2" class="description-text hidden">
+                    <strong>Descrição do Infográfico:</strong> Ilustração mostrando o interior de um leitor de código de barras manual. Destaca o diodo emissor de laser, os espelhos rotativos de varredura, o conjunto de lentes colimadoras e o fotodetector que decodifica as barras em dados.
+                </div>
+            </div>
         </div>
 
+        <!-- COLUNA DA DIREITA -->
         <div class="right-column">
             <div class="blog-badge">DIÁRIO MAKER</div>
 
@@ -340,12 +372,42 @@
                     <strong>Conceito do Projeto:</strong> Demonstrar como a variação luminosa e o alto contraste auxiliam pessoas com baixa visão a identificar caminhos, entradas e áreas críticas onde sinalizações escritas não são eficazes.
                 </div>
             </div>
+
+            <div class="blog-badge">ÓPTICA AVANÇADA</div>
+
+            <div class="post-card">
+                <h3>A Óptica nos Microscópios</h3>
+                <p>Sistemas de lentes objetivas e oculares projetadas para ampliações extremas de imagem.</p>
+                
+                <div class="image-box">
+                    <img src="microscopio-optico.jpg" alt="A Óptica nos Microscópios">
+                </div>
+                
+                <button class="desc-button" onclick="toggleDescription('desc-img-3')">Acessar Descrição</button>
+                <div id="desc-img-3" class="description-text hidden">
+                    <strong>Descrição do Infográfico:</strong> Diagrama detalhado do funcionamento de um microscópio óptico. Exibe o caminho do feixe de luz desde a lâmpada LED até o condensador, revólver de objetivas, tubo e lente ocular.
+                </div>
+            </div>
+
+            <div class="post-card">
+                <h3>Óptica nos Lasers de Corte</h3>
+                <p>Concentração e colimação de feixes de alta potência para precisão em corte e gravação mecânica.</p>
+                
+                <div class="image-box">
+                    <img src="laser-optico.jpg" alt="Óptica nos Lasers de Corte">
+                </div>
+                
+                <button class="desc-button" onclick="toggleDescription('desc-img-4')">Acessar Descrição</button>
+                <div id="desc-img-4" class="description-text hidden">
+                    <strong>Descrição do Infográfico:</strong> Estrutura de uma cortadora laser CNC mostrando a cavidade ressonante, lentes de colimação, lentes focalizadoras e o bico de corte com exaustão.
+                </div>
+            </div>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 - Projeto Escolar sobre Baixa Visão e Cultura Maker.</p>
+        <p>&copy; 2026 - Projeto Escolar sobre Baixa Visão, Cultura Maker e Óptica.</p>
     </footer>
 
     <script>
